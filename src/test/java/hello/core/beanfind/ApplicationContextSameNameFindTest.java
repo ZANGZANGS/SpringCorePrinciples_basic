@@ -48,7 +48,7 @@ public class ApplicationContextSameNameFindTest {
     @DisplayName("타입으로 조회시 같은 타입이 둘 이상 있으면, 중복 오류가 발생한다")
     void findBeanByName(){
         MemberRepository memberRepository1 = context.getBean("memberRepository1", MemberRepository.class);
-        assertThat(memberRepository1).isEqualTo(MemberRepository.class);
+        assertThat(memberRepository1).isNotEqualTo(MemberRepository.class);
     }
 
     @Configuration
